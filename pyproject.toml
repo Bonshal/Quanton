@@ -1,7 +1,7 @@
 [project]
 name = "stock_analysis"
 version = "0.1.0"
-description = ""
+description = "Quanton — A multi-agent financial analyser powered by CrewAI"
 authors = [{name = "Your Name", email = "you@example.com"}]
 readme = "README.md"
 requires-python = ">=3.12,<=3.13"
@@ -10,6 +10,8 @@ dependencies = [
     "python-dotenv>=1.0.1",
     "html2text>=2024.2.26",
     "sec-api>=1.0.20",
+    "yfinance>=0.2.54",
+    "langchain-community>=0.3.0",
 ]
 
 [project.scripts]

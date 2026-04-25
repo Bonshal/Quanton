@@ -1,51 +1,118 @@
-financial_analysis:
-  description: >
-    Conduct a thorough analysis of {company_stock}'s stock financial health and market performance. This includes examining key financial metrics such as
-    P/E ratio, EPS growth, revenue trends, and debt-to-equity ratio. Also, analyze the stock's performance in comparison 
-    to its industry peers and overall market trends.
-
-  expected_output: >
-    The final report must expand on the summary provided but now 
-    including a clear assessment of the stock's financial standing, its strengths and weaknesses, 
-    and how it fares against its competitors in the current market scenario.
-    Make sure to use the most recent data possible.
-
 research:
   description: >
-    Collect and summarize recent news articles, press
-    releases, and market analyses related to the {company_stock} stock and its industry.
-    Pay special attention to any significant events, market sentiments, and analysts' opinions. 
-    Also include upcoming events like earnings and others.
+    Conduct comprehensive market research on {company_stock}.
+
+    Your research must include:
+    1. A summary of the most recent news articles, press releases, and analyst
+       reports (last 30–90 days).
+    2. Current market sentiment (bullish / bearish / neutral) and why.
+    3. Analyst consensus rating and price-target range.
+    4. Upcoming catalysts: earnings dates, product launches, regulatory events,
+       or macroeconomic factors that could move the stock.
+    5. Competitor landscape — key rivals and how {company_stock} is positioned
+       against them.
+
+    Use all available tools to gather the freshest data possible.
 
   expected_output: >
-    A report that includes a comprehensive summary of the latest news, 
-    any notable shifts in market sentiment, and potential impacts on the stock. Also make sure to return the stock ticker as {company_stock}.
-    Make sure to use the most recent data as possible.
+    A structured Market Research Report containing:
+    - Executive Summary (2–3 sentences)
+    - Recent News & Events (bullet points with dates)
+    - Market Sentiment Analysis
+    - Analyst Ratings & Price Targets
+    - Upcoming Catalysts
+    - Competitive Landscape
+    Include the stock ticker {company_stock} prominently.
+
+financial_analysis:
+  description: >
+    Perform a thorough quantitative financial analysis of {company_stock}.
+
+    Your analysis must cover:
+    1. Key valuation metrics: P/E (trailing & forward), Price/Sales,
+       Price/Book, EV/EBITDA.
+    2. Growth metrics: revenue growth YoY, EPS growth, earnings surprises.
+    3. Profitability: gross margin, operating margin, net margin, ROE, ROA.
+    4. Balance sheet strength: cash position, total debt, debt-to-equity ratio,
+       current ratio, quick ratio.
+    5. Cash flow: free cash flow generation, operating cash flow trends.
+    6. Peer comparison: how do these metrics compare to industry averages and
+       direct competitors?
+    7. Intrinsic value estimate using at least one method (e.g. simple DCF or
+       P/E relative valuation).
+
+    Use the Stock Data Tool to retrieve live figures and the Calculator Tool
+    for any derived metrics.
+
+  expected_output: >
+    A structured Financial Analysis Report containing:
+    - Valuation Summary (table of key ratios)
+    - Growth & Profitability Analysis
+    - Balance Sheet & Liquidity Assessment
+    - Cash Flow Analysis
+    - Peer Benchmarking
+    - Intrinsic Value Estimate with assumptions stated
+    - Strengths and Weaknesses summary
 
 filings_analysis:
   description: >
-    Analyze the latest 10-Q and 10-K filings from EDGAR for the stock {company_stock} in question. 
-    Focus on key sections like Management's Discussion and analysis, financial statements, insider trading activity, 
-    and any disclosed risks. Extract relevant data and insights that could influence
-    the stock's future performance.
+    Analyse the latest 10-K (annual) and 10-Q (quarterly) SEC filings for
+    {company_stock} available on EDGAR.
+
+    Focus on:
+    1. Management Discussion & Analysis (MD&A): key themes, management's
+       stated priorities, and any guidance provided.
+    2. Revenue recognition policies and any recent accounting changes.
+    3. Risk factors: what new or escalating risks does management disclose?
+    4. Insider trading activity: recent buys or sells by executives / directors.
+    5. Off-balance-sheet liabilities, contingent liabilities, or legal disputes.
+    6. Capital allocation: share buybacks, dividends, capex plans.
+    7. Any restatements, material weaknesses in internal controls, or auditor
+       change flags.
 
   expected_output: >
-    Final answer must be an expanded report that now also highlights significant findings
-    from these filings including any red flags or positive indicators for your customer.
+    A structured SEC Filings Report containing:
+    - MD&A Key Takeaways
+    - Disclosed Risk Factors (ranked by severity)
+    - Insider Trading Summary (with dates and amounts)
+    - Off-Balance-Sheet & Legal Risks
+    - Capital Allocation Plans
+    - Red Flags (if any)
+    - Positive Indicators
 
 recommend:
   description: >
-    Review and synthesize the analyses provided by the
-    Financial Analyst and the Research Analyst.
-    Combine these insights to form a comprehensive
-    investment recommendation. You MUST Consider all aspects, including financial
-    health, market sentiment, and qualitative data from
-    EDGAR filings. 
-    
-    Make sure to include a section that shows insider 
-    trading activity, and upcoming events like earnings.
+    Review and synthesise the Market Research Report, the Financial Analysis
+    Report, and the SEC Filings Report to produce a definitive investment
+    recommendation for {company_stock}.
 
-  expected_output: > 
-    Your final answer MUST be a recommendation for your customer. It should be a full super detailed report, providing a 
-    clear investment stance and strategy with supporting evidence.
-    Make it pretty and well formatted for your customer.
+    Your recommendation must:
+    1. State a clear stance: Strong Buy / Buy / Hold / Sell / Strong Sell.
+    2. Provide a 12-month price target with bull, base, and bear case scenarios.
+    3. Summarise the top 3 reasons supporting your recommendation.
+    4. List the top 3 risks that could invalidate your thesis.
+    5. Include a suggested position-sizing note (e.g. suitable for growth
+       allocation, income portfolio, speculative position, etc.).
+    6. Highlight insider trading activity and upcoming catalyst events.
+    7. Format the report professionally for a high-net-worth client audience.
+
+  expected_output: >
+    A beautifully formatted, comprehensive Investment Recommendation Report for
+    {company_stock} containing:
+
+    # Investment Report: {company_stock}
+
+    ## Executive Summary
+    ## Investment Stance & Price Target
+    ## Bull / Base / Bear Case Scenarios
+    ## Key Investment Thesis (Top 3 reasons)
+    ## Key Risks (Top 3)
+    ## Financial Highlights
+    ## Market Sentiment & News Catalysts
+    ## SEC Filings Insights (Insider Trading, Red Flags)
+    ## Portfolio Positioning Suggestion
+    ## Conclusion
+
+    Use markdown formatting with tables where appropriate. Make it clear,
+    professional, and actionable.
+
