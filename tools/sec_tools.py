@@ -1,9 +1,9 @@
 import os
 from typing import Any, Optional, Type
-from pydantic.v1 import BaseModel, Field
+from pydantic import BaseModel, Field
 from crewai_tools import RagTool
+from crewai_tools.tools.rag.types import DataType
 from sec_api import QueryApi  # Make sure to have sec_api installed
-from embedchain.models.data_type import DataType
 import requests
 import html2text
 import re
